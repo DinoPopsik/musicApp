@@ -8,11 +8,11 @@ function Controls() {
     songs,
     nextSong,
     prevSong,
-    repeat,
-    random,
-    playing,
-    toggleRandom,
-    toggleRepeat,
+    // repeat,
+    //  random,
+      playing,
+    // toggleRandom,
+    // toggleRepeat,
     togglePlaying,
     handleEnd,
     songslist,
@@ -24,6 +24,12 @@ function Controls() {
   const [statevolum, setStateVolum] = useState(0.3)
   const [dur, setDur] = useState(0)
   const [currentTime, setCurrentTime] = useState(0)
+
+  const [repeat, toggleRepeat] = useState(false)
+  const [random, toggleRandom] = useState(false)
+  const toggleRepeatFunc = () => {toggleRepeat(!repeat)}
+  const toggleRandomFunc = () => {toggleRandom(!random)}
+
 
   const fmtMSS = (s) => {
     return (s - (s %= 60)) / 60 + (9 < s ? ':' : ':0') + ~~s
@@ -118,13 +124,13 @@ function Controls() {
       </div>
       <div className="plsoptions">
         <span
-          onClick={toggleRandom}
+          onClick={toggleRandomFunc}
           className={'random ' + (random ? 'active' : '')}
         >
           <i className="fas fa-random"></i>
         </span>
         <span
-          onClick={toggleRepeat}
+          onClick={toggleRepeatFunc}
           className={'repeat ' + (repeat ? 'active' : '')}
         >
           <i className="fas fa-redo-alt"></i>

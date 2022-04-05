@@ -34,14 +34,14 @@ const PlayerState = (props) => {
   // Prev song
   const prevSong = () => {
     if (state.currentSong === 0) {
-      SetCurrent(state.songs.length - 1)
+      SetCurrent(state.songslist.length - 1)
     } else {
       SetCurrent(state.currentSong - 1)
     }
   }
   // Next song
   const nextSong = () => {
-    if (state.currentSong === state.songs.length - 1) {
+    if (state.currentSong === state.songslist.length - 1) {
       SetCurrent(0)
     } else {
       SetCurrent(state.currentSong + 1)
