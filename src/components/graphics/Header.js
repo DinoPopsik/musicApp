@@ -6,7 +6,7 @@ function Header() {
 
   return (
     <header className="draggable">
-      <h3>ReactWave</h3>
+      <h3>M.I.L.K.</h3>
     </header>
   )
 }
